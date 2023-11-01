@@ -1,0 +1,32 @@
+.accommodation_card{
+    display: flex;
+    flex-direction: column; /* stack child elements vertically */
+    justify-content: flex-end;
+
+    position: relative;
+    width: 100%;
+    max-width: 340px;
+    height: 340px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    h2{
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 25px;
+        color: $white;
+        // margin: 0;
+        padding: 20px; /* padding to ensure the title doesn't touch the edges */
+        // background-color: rgba(255, 255, 255, 0.7);
+        z-index: 1;
+    }
+
+    img{
+        width: 100%; /* make image take full width of the container */
+        min-height: 100%; /* make image take at least the full height of the container */
+        object-fit: cover; /* scales and crops the image to fit the container */
+        position: absolute; /* position the image absolute to cover the full space of the card */
+        top: 0;
+        left: 0;
+    }
+}
