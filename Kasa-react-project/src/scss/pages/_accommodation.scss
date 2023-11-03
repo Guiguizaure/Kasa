@@ -1,26 +1,135 @@
-.accommodation_details{
-    padding: 50px 0;
-}
+.accommodation{
+    padding-bottom: 50px;
 
-.accordion-wrapper{
-    display: flex;
-    column-gap: 76px;
-
-    .accordion{
-        flex: 1;
+    @include breakpoint(640px){
+        padding: 0 20px 50px 20px;
     }
-    .accordion-header{
-        padding: 10px 20px 10px 10px;
+
+    .carousel{
+        margin-bottom: 30px;
+    }
+
+
+    .info{
+        display: flex;
+        justify-content: space-between;
+
+        @include breakpoint(1024px){
+            flex-direction: column;
+        }
+
+        @include breakpoint(640px){
+            gap: 16px;
+        }
+
+        &__right{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    &__title{
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 142.6%;
+        color: $red;
+
+        @include breakpoint(640px){
+            font-size: 18px;
+        }
+    }
+    &__location{
+        margin-bottom: 18px;
         font-size: 18px;
         font-style: normal;
         font-weight: 500;
-        line-height: 142.6%; /* 25.668px */
-        color: $white;
-        background: $red;
-        border-radius: 10px;
+        line-height: 142.6%; 
+        color: $red;
+
+        @include breakpoint(640px){
+            font-size: 14px;
+        }
     }
-    .accordion-content{
-        padding: 10px 20px 10px 10px;
-        background: $grey;
+    &__tags{
+        display: flex;
+        gap: 10px;
+
+        li{
+            display: flex;
+            justify-content: center; 
+            align-items: center;  
+                  
+            width: 100%;
+            max-width: 115px;
+            padding: 3px 0;
+            background: $red;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            color: $white;
+            line-height: 142.6%;
+            border-radius: 10px;
+            text-align: center;
+        }
+    }
+
+    .host{
+        margin-bottom: 20px;
+
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        gap: 10px;
+
+        @include breakpoint(640px){
+            margin: 0;
+        }
+
+        &__picture{
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+
+            @include breakpoint(640px){
+                width: 32px;
+                height: 32px;
+            }
+        }
+        &__name{
+            max-width: 124px;
+            text-align: right;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 142.6%;
+            color: $red;
+
+
+            @include breakpoint(640px){
+                font-size: 12px;
+            }
+        }
+    }
+
+    .rating{
+        display: flex;
+        justify-content: end;
+        gap: 10px;
+
+        img.star{
+            width: 24px;
+
+            @include breakpoint(640px){
+                width: 20px;
+            }
+        }
+    }
+
+    .accordion_row{
+        margin-top: 24px;
     }
 }
+

@@ -10,6 +10,16 @@
     border-radius: 10px;
     overflow: hidden;
 
+    @include breakpoint(1024px){
+        height: 260px;
+    }
+    @include breakpoint(640px){
+        max-width: none;
+        height: 255px;
+    }
+
+    
+
     h2{
         max-width: 218px;
         font-size: 18px;
@@ -18,7 +28,8 @@
         color: $white;
         // margin: 0;
         padding: 20px; /* padding to ensure the title doesn't touch the edges */
-        // background-color: rgba(255, 255, 255, 0.7);
+        background: #{$black}40;
+        border-top-right-radius: 10px;
         z-index: 1;
     }
 

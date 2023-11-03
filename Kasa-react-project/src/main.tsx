@@ -4,12 +4,12 @@ import ReactDOM from "react-dom/client";
 // import './index.css'
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Accomodation from "./pages/Accomodation";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Error from "./components/Error";
+import Home from "./pages/Home/home";
+import About from "./pages/About/about";
+import Accomodation from "./pages/Accomodation/accomodation";
+import Header from "./components/Header/header";
+import Footer from "./components/Footer/footer";
+import Error from "./pages/Error/error";
 import "../../Kasa-react-project/src/scss/main.scss";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

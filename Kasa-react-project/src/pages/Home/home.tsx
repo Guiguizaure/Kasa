@@ -1,6 +1,6 @@
-import Banner from "../../components/Banner";
+import Banner from "../../components/Banner/banner";
 import homeBanner from "../../assets/home-banner.png";
-import Accommodations from "../../components/Accommodations";
+import Accommodations from "../../components/Accommodations/accommodations";
 
 const Home: React.FC = () => {
   return (

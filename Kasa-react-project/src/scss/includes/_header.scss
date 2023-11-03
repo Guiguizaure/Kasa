@@ -4,64 +4,57 @@ header{
     justify-content: space-between;
     background: $white;
     padding: 45px 0 50px 0;
+
+    @include breakpoint(640px){
+        padding: 22px 20px;
+    }
 }
 
 nav{
     display: flex;
     gap: 57px;
 
+    @include breakpoint(640px){
+        gap: 26px;
+    }
+
     a{
         font-size: 24px;
         text-align: right;
         font-weight: 500;
         line-height: 34px;
-        // margin-right: 10px;
-        // padding: 10px;
         color: $red;
+
+        @include breakpoint(640px){
+            font-size: 12px;
+        }
     }
     a.active{
         text-decoration: underline;
     }
 }
 
-figure.logo{
-    background: no-repeat center/cover;
-    background-size: cover;
-    width: 210px;  // or whatever size you prefer
-    height: 68px; // or whatever size you prefer
-}
+// figure.logo{
+//     background: no-repeat center/cover;
+//     background-size: cover;
+//     width: 210px;  // or whatever size you prefer
+//     height: 68px; // or whatever size you prefer
+// }
 
-.banner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.logo{
+    display: block;
 
-    width: 100%;
-    height: 223px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    position: relative; 
-    border-radius: 25px;
-    overflow: hidden;
-
-    &::before{
-        content: "";
-        position: absolute;
-        width: 100%;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        background: #{$black}30;
-        mix-blend-mode: darken;
+    @include breakpoint(640px){
+       display: none;
     }
 }
 
-.banner-title {
-    font-size: 48px;
-    font-weight: 500;
-    line-height: 142.6%;
-    color: $white; 
-    z-index: 1;
+.logo-small{
+    display: none;
+
+    @include breakpoint(640px){
+       display: block;
+    }
 }
+
+

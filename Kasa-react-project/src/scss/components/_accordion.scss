@@ -1,0 +1,100 @@
+.accordion_row{
+    display: flex;
+    column-gap: 76px;
+
+    @include breakpoint(1024px){
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    @include breakpoint(640px){
+        row-gap: 20px;
+    }
+}
+
+.accordion_column{
+    padding: 38px 50px;
+    // max-width: 1023px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.accordion{
+    flex: 1;
+}
+.accordion-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px 10px 10px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 142.6%; /* 25.668px */
+    color: $white;
+    background: $red;
+    border-radius: 10px;
+}
+.accordion-content{
+    // padding: 30px 20px 10px 20px;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    max-height: 0;
+    opacity: 0;
+    background: $grey-light;
+    border-radius: 10px 10px 5px 5px;
+
+    &--open{
+        margin-top: -10px;
+        position: relative;
+        z-index: -1;
+        animation: slideDownFadeIn 0.3s ease forwards;
+    }
+
+    
+    p, ul{
+        padding: 30px 20px 10px 20px;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 142.6%;
+        color: $red;
+    }
+    li{
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 142.6%;
+        color: $red;
+    }
+    li:not(:last-child){
+        margin-bottom: 5px;
+    }
+}
+
+.accordion-content--open {
+    max-height: 1000px; /* adjust as needed */
+    opacity: 1;
+}
+
+/* This animation will run when the accordion content is opened */
+@keyframes slideDownFadeIn {
+    from {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+  
+.chevron {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &--active{
+        transform: rotate(180deg); 
+    }
+}

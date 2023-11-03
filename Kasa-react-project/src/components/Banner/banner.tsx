@@ -9,11 +9,13 @@ interface BannerProps {
 
 const Banner: React.FC<BannerProps> = ({ image, title }) => {
   return (
-    <div
-      className="banner container"
-      style={{ backgroundImage: `url(${image})` }}
-    >
-      {title && <h1 className="banner-title">{title}</h1>}
+    <div className="banner-wrapper">
+      <div
+        className="banner container"
+        style={{ backgroundImage: `url(${image})` }}
+      >
+        {title && <h1 className="banner-title">{title}</h1>}
+      </div>
     </div>
   );
 };

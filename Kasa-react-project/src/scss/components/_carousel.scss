@@ -1,0 +1,39 @@
+.carousel{
+    display: flex;
+    position: relative;
+    height: 415px;
+    border-radius: 25px;
+    overflow: hidden;
+
+    &__image{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    &__counter{
+        padding: 5px;
+        position: absolute;
+        top: 92%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $white;
+        background: #{$black}20;
+    }
+
+    &__arrow{
+        content: "";
+        position: absolute;
+        cursor: pointer;
+
+        &--right{
+           right: 23px;
+           top: 160px;
+        }
+
+        &--left{
+            left: 23px;
+            top: 160px;
+        }
+    }
+}

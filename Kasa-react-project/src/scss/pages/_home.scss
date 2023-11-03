@@ -2,5 +2,17 @@
     padding: 99px 0 93px 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 60px 50px
+    gap: 60px 50px;
+
+    @include breakpoint(1024px){
+        grid-template-columns: 1fr 1fr;
+    }
+    @include breakpoint(640px){
+        padding: 22px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+    }
+
 }

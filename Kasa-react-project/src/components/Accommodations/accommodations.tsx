@@ -1,5 +1,5 @@
 import accommodationsData from "../../data/accommodations.json";
-import { Accommodation } from "../Accommodations/types"; // import the interface
+import { Accommodation } from "./types"; // import the interface
 import { Link } from "react-router-dom";
 
 const Accommodations: React.FC = () => {
