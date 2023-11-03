@@ -1,0 +1,26 @@
+.accommodation_details{
+    padding: 50px 0;
+}
+
+.accordion-wrapper{
+    display: flex;
+    column-gap: 76px;
+
+    .accordion{
+        flex: 1;
+    }
+    .accordion-header{
+        padding: 10px 20px 10px 10px;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 142.6%; /* 25.668px */
+        color: $white;
+        background: $red;
+        border-radius: 10px;
+    }
+    .accordion-content{
+        padding: 10px 20px 10px 10px;
+        background: $grey;
+    }
+}
