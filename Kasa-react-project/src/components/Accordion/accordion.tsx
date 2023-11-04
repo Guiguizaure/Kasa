@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import chevron from "../../assets/chevron-up.svg";
+import chevronSmall from "../../assets/chevron-up-small.svg";
 
 interface AccordionProps {
   title: string;
@@ -8,18 +9,33 @@ interface AccordionProps {
 
 const Accordion: React.FC<AccordionProps> = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth < 640);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileView(window.innerWidth < 640);
+    };
+
+    window.addEventListener("resize", handleResize);
+    // Set the initial value
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const toggleAccordion = () => setIsOpen(!isOpen);
 
+  // Choose the correct chevron based on the window width
+  const chevronIcon = isMobileView ? chevronSmall : chevron;
+
   return (
     <div className="accordion">
-      <div className="accordion-header">
+      <div className="accordion-header" onClick={toggleAccordion}>
         {title}
         <img
-          src={chevron}
+          src={chevronIcon}
           alt="Toggle"
           className={`chevron ${isOpen ? "chevron--active" : ""}`}
-          onClick={toggleAccordion}
         />
       </div>
       <div

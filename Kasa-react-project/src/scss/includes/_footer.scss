@@ -9,6 +9,10 @@ footer{
     background: $black;
     color: $white;
 
+    @include breakpoint(640px){
+        gap: 16px;
+    }
+
     .logo-footer{
         background: no-repeat center/cover;
         background-size: cover;
@@ -19,6 +23,12 @@ footer{
         font-size: 24px;
         font-style: normal;
         font-weight: 500;
-        line-height: 142.6%; /* 34.224px */
+        line-height: 142.6%; 
+
+        @include breakpoint(640px){
+            max-width: 97px;
+            font-size: 12px;
+        }
+
     }
 }

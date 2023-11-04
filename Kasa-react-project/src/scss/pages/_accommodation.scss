@@ -2,11 +2,15 @@
     padding-bottom: 50px;
 
     @include breakpoint(640px){
-        padding: 0 20px 50px 20px;
+        padding: 0 20px 27px 20px;
     }
 
     .carousel{
         margin-bottom: 30px;
+
+        @include breakpoint(640px){
+            margin-bottom: 15px;
+        }
     }
 
 
@@ -24,9 +28,16 @@
 
         &__right{
             display: flex;
-            flex-direction: row-reverse;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+
+            @include breakpoint(1024px){
+             
+                flex-direction: row-reverse;
+                justify-content: space-between;
+                align-items: center;
+                gap: 10px;
+            }
+            
         }
     }
     &__title{
@@ -38,6 +49,7 @@
 
         @include breakpoint(640px){
             font-size: 18px;
+            margin-bottom: 3px;
         }
     }
     &__location{
@@ -72,6 +84,11 @@
             line-height: 142.6%;
             border-radius: 10px;
             text-align: center;
+
+            @include breakpoint(640px){
+                font-size: 10px;
+                border-radius: 5px;
+            }
         }
     }
 

@@ -5,6 +5,11 @@
     border-radius: 25px;
     overflow: hidden;
 
+    @include breakpoint(640px){
+        height: 255px;
+        border-radius: 10px;
+    }
+
     &__image{
         width: 100%;
         height: auto;
@@ -19,6 +24,10 @@
         transform: translate(-50%, -50%);
         color: $white;
         background: #{$black}20;
+
+        @include breakpoint(640px){
+            display: none;
+        }
     }
 
     &__arrow{
@@ -29,11 +38,21 @@
         &--right{
            right: 23px;
            top: 160px;
+
+           @include breakpoint(640px){
+                right: 2px;
+                top: 113px;
+            }
         }
 
         &--left{
             left: 23px;
             top: 160px;
+
+            @include breakpoint(640px){
+                left: 2px;
+                top: 113px;
+            }
         }
     }
 }

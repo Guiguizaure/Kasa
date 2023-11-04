@@ -1,0 +1,56 @@
+.error-page{
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    padding: 0px 20px;
+    gap: 139px;
+    color: $red;
+
+    @include breakpoint(640px){
+        gap: 113px;
+    }
+
+    &__title{
+        margin-top: 90px;
+        // margin-bottom: 139px;
+        text-align: center;
+        font-size: 288px;
+        font-style: normal;
+        font-weight: 700;
+
+        @include breakpoint(1024px){
+            font-size: 150px;
+        }
+        @include breakpoint(640px){
+            font-size: 96px;
+        }
+        // line-height: 142.6%;
+    }
+    &__desc{
+        // margin-bottom: 139px;
+        text-align: center;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 142.6%;
+
+        @include breakpoint(640px){
+            max-width: 260px;
+            font-size: 18px;
+        }
+    }
+    &__link{
+        margin-bottom: 139px;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 142.6%;
+        text-decoration-line: underline;
+
+        @include breakpoint(640px){
+            margin-bottom: 113px;
+            font-size: 14px;
+        }
+    }
+}
