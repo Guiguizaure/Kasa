@@ -1,5 +1,5 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import accommodationsData from "../../data/accommodations.json";
 import Accordion from "../../components/Accordion/accordion";
 import Carousel from "../../components/Carousel/carousel";
@@ -9,13 +9,20 @@ import Rating from "../../components/Rating/rating";
 
 const Accomodation: React.FC = () => {
   const { id } = useParams<{ id: string }>(); // specify type for id
+  const navigate = useNavigate();
 
   // Now you can use this id to fetch or filter the data for the specific accommodation
   const accommodationData = accommodationsData.find((acc) => acc.id === id);
 
   // If there's no matched accommodation, you can render a not found message or redirect
+  useEffect(() => {
+    if (!accommodationData) {
+      navigate("/not-found", { replace: true }); // Redirect to a path that will trigger the catch-all route
+    }
+  }, [accommodationData, navigate]);
+
   if (!accommodationData) {
-    return <div>Accommodation not found.</div>;
+    return null; // This will prevent the component from rendering further
   }
 
   // Render your page based on accommodationData
