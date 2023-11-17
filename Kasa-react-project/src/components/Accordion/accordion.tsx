@@ -30,11 +30,12 @@ const Accordion: React.FC<AccordionProps> = ({ title, children }) => {
 
   return (
     <div className="accordion">
-      <div className="accordion-header" onClick={toggleAccordion}>
+      <div className="accordion-header">
         {title}
         <img
           src={chevronIcon}
           alt="Toggle"
+          onClick={toggleAccordion}
           className={`chevron ${isOpen ? "chevron--active" : ""}`}
         />
       </div>
