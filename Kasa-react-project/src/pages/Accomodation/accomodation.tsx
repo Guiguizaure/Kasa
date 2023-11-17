@@ -11,10 +11,9 @@ const Accomodation: React.FC = () => {
   const { id } = useParams<{ id: string }>(); // specify type for id
   const navigate = useNavigate();
 
-  // Now you can use this id to fetch or filter the data for the specific accommodation
   const accommodationData = accommodationsData.find((acc) => acc.id === id);
 
-  // If there's no matched accommodation, you can render a not found message or redirect
+  // If there's no matched accommodation, render a not found message or redirect
   useEffect(() => {
     if (!accommodationData) {
       navigate("/not-found", { replace: true }); // Redirect to a path that will trigger the catch-all route
@@ -25,7 +24,7 @@ const Accomodation: React.FC = () => {
     return null; // This will prevent the component from rendering further
   }
 
-  // Render your page based on accommodationData
+  // Render the page based on accommodationData
   return (
     <div className="accommodation container">
       {accommodationData && <Carousel images={accommodationData.pictures} />}
